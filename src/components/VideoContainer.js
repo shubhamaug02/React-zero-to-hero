@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import {YOUTUBE_API_URL} from "../constants";
+import {YOUTUBE_API_URL} from "../utils/constants";
 import ButtonList from "./ButtonList";
-import VideoCard from "./VideoCard";
+import VideoCard, {AdVideoCard} from "./VideoCard";
 
 const VideoContainer = () => {
 
@@ -23,6 +23,7 @@ const VideoContainer = () => {
      <div>
         <ButtonList />
         <div className="flex flex-wrap">
+            {videos[0] && <AdVideoCard videoInfo={videos[0]}/>}
             {videos.map(video => (
             <Link to={"/watch?v=" + video.id} key={video.id}>
                 <VideoCard {...video} />
