@@ -6,6 +6,8 @@ import WatchPage from './components/WatchPage';
 import VideoContainer from './components/VideoContainer';
 import {Provider} from "react-redux";
 import store from "./utils/store";
+import Demo from './components/Demo';
+import Demo2 from './components/Demo2';
 
 function App() {
 
@@ -21,6 +23,14 @@ function App() {
         {
           path: "/watch",
           element: <WatchPage />
+        },
+        {
+          path:"/demo",
+          element: 
+          <>
+           <Demo />
+           <Demo2/>
+          </>
         }
       ]
     }
